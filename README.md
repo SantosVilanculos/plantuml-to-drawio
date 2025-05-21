@@ -1,5 +1,10 @@
 # Convert PlantUML to diagrams.net XML
 
+[![build](https://img.shields.io/github/actions/workflow/status/SantosVilanculos/plantuml-to-drawio/release.yml)](https://github.com/SantosVilanculos/plantuml-to-drawio/actions)
+[![release](https://img.shields.io/github/v/release/SantosVilanculos/plantuml-to-drawio)](https://github.com/SantosVilanculos/plantuml-to-drawio/releases)
+[![license](https://img.shields.io/github/license/SantosVilanculos/plantuml-to-drawio)](https://github.com/SantosVilanculos/plantuml-to-drawio/blob/main/LICENSE)
+[![last commit](https://img.shields.io/github/last-commit/SantosVilanculos/plantuml-to-drawio)](https://github.com/SantosVilanculos/plantuml-to-drawio/commits/main)
+
 Transform your PlantUML diagrams into fully editable diagrams.net (formerly draw.io) files directly from your command line. This script is designed for software engineers like you who want to seamlessly integrate their documentation workflows.
 
 ## ✨ Features
