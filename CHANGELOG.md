@@ -13,7 +13,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **Refactored CLI argument parsing to use the Click library**, replacing manual `sys.argv` handling. This significantly improves CLI robustness, user experience, and future extensibility.
   - The `--debug` option is now a **boolean flag** (`-d` or `--debug`). Its mere presence enables debug mode (`True`), while its absence disables it (`False`).
-  - The `path` argument's help text now uses a more descriptive **metavar** (`INPUT_FILE_OR_DIRECTORY`) for clarity.
   - Improved **help text** for both the `path` argument (via the main command's docstring) and the `--output` option, including usage examples.
 
 ## [1.2.0] - 2025-05-21
