@@ -132,7 +132,3 @@ This program is free software.
 ## 🙏 Credits
 
 This script is based on the work of [Russell Glaue](https://github.com/rglaue/plantuml_to_drawio).
-
-```
-
-```
