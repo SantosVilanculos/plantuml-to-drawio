@@ -1,3 +1,0 @@
-@startuml
-Cat -> Mouse : eats
-@enduml

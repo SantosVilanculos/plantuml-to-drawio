@@ -1,0 +1,10 @@
+* text=auto eol=lf
+
+*.md diff=markdown
+
+*.ico binary
+*.jar binary
+*.png binary
+
+/.github/ export-ignore
+/CHANGELOG.md export-ignore
