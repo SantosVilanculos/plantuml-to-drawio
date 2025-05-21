@@ -1,10 +1,10 @@
-Version: 0.0.0
+Version: 1.3.0
 CompanyName: Santos Vilanculos
-FileDescription: A cli tool for converting Plant UML to Draw.io xml.
+FileDescription: A command-line tool to transform your PlantUML diagrams into fully editable diagrams.net (formerly draw.io) files.
 InternalName: plantuml-to-drawio
 LegalCopyright: Copyright (c) 2025 Santos Vilanculos
 OriginalFilename: plantuml-to-drawio.exe
-ProductName: Covert PlantUML to Drawio
+ProductName: PlantUML to Draw.io
 Translation:
   - langID: 0x0409
     charsetID: 1200

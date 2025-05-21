@@ -1,24 +1,35 @@
-import sys
 from pathlib import Path
+
+import click
 
 from conversion import conversion
 
 
-def main() -> None:
-    if len(sys.argv) < 2:
-        print(f"Usage: {sys.argv[0]} <PlantUML-file>")
-        sys.exit(1)
+@click.command()
+@click.argument(
+    "path", nargs=1, type=click.Path(exists=True, resolve_path=True)
+)
+@click.option(
+    "-o",
+    "--output",
+    required=True,
+    help="The output file path.",
+    type=click.Path(exists=False, resolve_path=True),
+)
+@click.option(
+    "-d",
+    "--debug",
+    is_flag=True,
+    help="Enable debug mode. If present, debug is True; otherwise, it's False.",
+)
+def main(path, output, debug):
+    """
+    A command-line tool to transform your PlantUML into interactive diagrams.net (draw.io) files.
+    """
+    content = conversion(path, debug)
 
-    plantuml_file = Path.cwd().joinpath(sys.argv[1])
-
-    if not plantuml_file.is_file():
-        print("Error: PlantUML file not found.")
-        sys.exit(1)
-
-    i = str(plantuml_file.absolute())
-    d = ("-d" in sys.argv) or ("--debug" in sys.argv)
-
-    print(conversion(i, d))
+    output_file = Path(output)
+    output_file.write_text(content, encoding="utf-8")
 
 
 if __name__ == "__main__":

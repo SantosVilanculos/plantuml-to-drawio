@@ -5,7 +5,7 @@
 [![license](https://img.shields.io/github/license/SantosVilanculos/plantuml-to-drawio)](https://github.com/SantosVilanculos/plantuml-to-drawio/blob/main/LICENSE)
 [![last commit](https://img.shields.io/github/last-commit/SantosVilanculos/plantuml-to-drawio)](https://github.com/SantosVilanculos/plantuml-to-drawio/commits/main)
 
-Transform your PlantUML diagrams into fully editable diagrams.net (formerly draw.io) files directly from your command line. This script is designed for software engineers like you who want to seamlessly integrate their documentation workflows.
+A command-line tool to transform your PlantUML diagrams into fully editable diagrams.net (formerly draw.io) files. This utility is designed for anyone who wants to seamlessly integrate their documentation workflows.
 
 ## ✨ Features
 
@@ -31,7 +31,16 @@ Before you can use this script, ensure you have the following installed:
 
 ### Installation
 
-[**Include instructions on how to obtain/install the script. Is it a single script? A compiled binary? A package? Add relevant commands here.**]
+The `plantuml-to-drawio` tool is distributed as a standalone executable.
+
+1. **Download the latest release:** Visit the [releases page](https://github.com/SantosVilanculos/plantuml-to-drawio/releases) and download the appropriate executable for your operating system (e.g., `plantuml-to-drawio_win.exe` for Windows, `plantuml-to-drawio_linux` for Linux, etc.).
+2. **Make it executable (Linux/macOS):** If you're on Linux or macOS, you might need to make the downloaded file executable:
+
+   ```bash
+   chmod +x plantuml-to-drawio_linux # or your downloaded file name
+   ```
+
+3. **Place it in your PATH (optional but recommended):** For easy access from any directory, move the executable to a directory included in your system's `PATH` (e.g., `/usr/local/bin` on Linux/macOS, or any directory added to your `Path` environment variable on Windows).
 
 ### Creating a PlantUML File
 
@@ -45,11 +54,29 @@ Cat -> Mouse : eats
 
 ### Converting to diagrams.net XML
 
-Now, use the `plantuml-to-drawio` command to convert your PlantUML file. The output will be sent to standard output, so you can redirect it to a `.drawio` file:
+Now, use the `plantuml-to-drawio` command to convert your PlantUML file.
+
+You'll need to provide the **input PlantUML file path** and specify an **output file path** using the `-o` or `--output` option.
 
 ```bash
-plantuml-to-drawio cat-eats-mouse.plantuml > cat-eats-mouse.drawio
+plantuml-to-drawio cat-eats-mouse.plantuml --output cat-eats-mouse.drawio
 ```
+
+#### Command Line Options
+
+You can view all available options and their descriptions by running:
+
+```bash
+plantuml-to-drawio --help
+```
+
+**Key Options:**
+
+- **`path` (positional argument):** The path to your `.plantuml` file you wish to process.
+  - Example: `plantuml-to-drawio my_diagram.plantuml ...`
+- **`-o, --output PATH` (required):** Specifies the path where the generated `.drawio` XML file will be saved.
+  - Example: `... -o output/diagram.drawio`
+- **`-d, --debug` (flag):** Enable debug mode. Include this flag if you need more verbose output for troubleshooting.
 
 ### Opening in diagrams.net
 
@@ -76,6 +103,8 @@ This script performs a series of steps to achieve the conversion:
 5. **Last Modified Date:** Retrieves the last modification date of the input PlantUML file to set as the revision date in the diagrams.net XML.
 6. **XML Generation:** Constructs the diagrams.net XML file, embedding the encoded SVG and PlantUML text, and outputs it to standard output.
 
+---
+
 ## 🏗 Building from Source
 
 If you wish to build the executable binary from the source code, follow these steps:
@@ -96,10 +125,14 @@ If you wish to build the executable binary from the source code, follow these st
 
 ## 📜 License
 
-This project is licensed under the Apache License 2.0. See the [LICENSE](https://www.apache.org/licenses/LICENSE-2.0) file for details.
+This project is licensed under the Apache License 2.0. See the [LICENSE](./LICENSE) file for details.
 
 This program is free software.
 
 ## 🙏 Credits
 
 This script is based on the work of [Russell Glaue](https://github.com/rglaue/plantuml_to_drawio).
+
+```
+
+```
